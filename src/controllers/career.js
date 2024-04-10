@@ -5,14 +5,14 @@ export class CareerController {
     const { id } = req.params,
       career = await CareerModel.getCareerByName(id)
 
-    // console.log(req.params)
-    // console.log(id)
+    res.header('Access-Control-Allow-Origin', '*')
 
     res.json(career)
   }
 
   static getAllCareers = async function (req, res) {
     const allCareers = await CareerModel.getAllCareers()
+    res.header('Access-Control-Allow-Origin', '*')
     res.json(allCareers)
   }
 }

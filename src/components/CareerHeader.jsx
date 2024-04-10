@@ -1,4 +1,9 @@
-export function CareerHeader() {
+export function CareerHeader({
+  careerName,
+  careerDuration,
+  subCareerName,
+  subCareerDuration,
+}) {
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-4 sm:flex-row sm:items-center lg:gap-8">
       <div className="order-1 flex flex-col justify-center lg:flex-row lg:items-center lg:gap-4">
@@ -7,10 +12,10 @@ export function CareerHeader() {
             className="mt-1 text-pretty text-2xl font-extrabold tracking-wide text-white lg:mt-0"
             id="titleCareer"
           >
-            Licenciatura en Informática
+            {careerName}
           </h1>
           <p className="text-sm text-white" id="careerDuration">
-            DURACIÓN: 5 AÑOS
+            {`DURACIÓN: ${careerDuration} AÑOS`}
           </p>
         </div>
         <div>
@@ -18,10 +23,10 @@ export function CareerHeader() {
             className="mt-0.5 text-xl font-extrabold tracking-wide text-white lg:mt-0 lg:text-2xl"
             id="subCareer"
           >
-            Analista en Informática
+            {subCareerName}
           </h2>
           <p className="lg:text-md text-sm text-white" id="subCareerDuration">
-            DURACIÓN: 3 AÑOS
+            {`DURACIÓN: ${subCareerDuration} AÑOS`}
           </p>
         </div>
       </div>

@@ -1,10 +1,26 @@
+import { useEffect, useState } from 'react'
 import { CareerHeader } from './components/CareerHeader'
 
 export function App() {
+  const [career, setCareer] = useState(null)
+
+  useEffect(() => {
+    fetch('http://localhost:1234/careers/1')
+      .then((res) => res.json())
+      .then((career) => {
+        setCareer(career)
+      })
+  }, [])
+
   return (
     <>
       <header className="bg-fourthColor px-4 py-2 shadow-shadowSelect">
-        <CareerHeader></CareerHeader>
+        <CareerHeader
+          careerName={career.nombre}
+          careerDuration={career.duracion}
+          subCareerName={career.tituloIntermedio}
+          subCareerDuration={career.duracionDelTituloIntermedio}
+        ></CareerHeader>
       </header>
 
       <main>
