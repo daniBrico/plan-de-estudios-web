@@ -1,7 +1,7 @@
 import { readJSON } from '../../../utils/utils.js'
 
 const careers = readJSON(
-  '../src/models/local-file-system/plan-de-estudios.json',
+  '../src/models/local-file-system/plan-de-estudios.json'
 )
 
 export class CareerModel {

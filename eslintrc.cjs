@@ -8,18 +8,27 @@ module.exports = {
     'plugin:react-hooks/recommended',
     '@rocketseat/eslint-config/next',
     'next/core-web-vitals',
+    'prettier'
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: {
-    react: { version: '18.2' },
+    react: { version: '18.2' }
   },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'prettier'],
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [
       'warn',
-      { allowConstantExport: true },
+      { allowConstantExport: true }
     ],
-  },
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'never'
+      }
+    ]
+  }
 }

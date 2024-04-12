@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        onest: ['Onest Variable'],
+        onest: ['Onest Variable']
       },
       colors: {
         firstColor: '#f15a5c',
@@ -22,13 +22,13 @@ export default {
         recursarColor: '#E8751A',
         recursarColorFondo: '#e6cf7b80',
         regularColor: '#401F71',
-        regularColorFondo: '#7d27ff81',
+        regularColorFondo: '#7d27ff81'
       },
       boxShadow: {
         shadowSelect: '0 0 0.8em #f15a5c',
-        shadowBox: '0 0 0.8em #dddde0',
-      },
-    },
+        shadowBox: '0 0 0.8em #dddde0'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }
