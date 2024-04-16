@@ -54,7 +54,7 @@ export function TableRow ({ codigo, nombre, dictado, correlativas, index, subjec
           {dictado}
         </td>
         <td className={`${subjecstLength - 1 !== index ? 'border-b-2' : ''} border-l-2 border-back p-2 text-center text-base`}>
-          {correlativas.join(' - ')}
+          {correlativas.length !== 0 ? correlativas.join(' - ') : ' - '}
         </td>
         <td
           className={
