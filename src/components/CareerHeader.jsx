@@ -2,11 +2,12 @@ export function CareerHeader ({
   careerName,
   careerDuration,
   subCareerName,
-  subCareerDuration
+  subCareerDuration,
+  loading
 }) {
   return (
     <div className='mx-auto flex max-w-4xl flex-col gap-4 sm:flex-row sm:items-center lg:gap-8'>
-      <div className='order-1 flex flex-col justify-center lg:flex-row lg:items-center lg:gap-4'>
+      <div className={`order-1 flex flex-col justify-center lg:flex-row lg:items-center lg:gap-4 ${loading ? 'hidden invisible' : ''}`}>
         <div>
           <h1
             className='mt-1 text-pretty text-2xl font-extrabold tracking-wide text-white lg:mt-0'

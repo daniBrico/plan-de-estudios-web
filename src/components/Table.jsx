@@ -1,10 +1,10 @@
-import { TableRow } from './TableRow'
+import { TableRows } from './TableRow'
 
-export function TableDesktop ({ careerYear, subjects }) {
+function ListOfTables ({ tableTitle, subjects }) {
   return (
     <>
       <h2 className='mb-2 mt-4 hidden text-center text-2xl text-firstColor md:block'>
-        {careerYear}
+        {tableTitle}
       </h2>
       <table className='mx-auto mb-2 hidden rounded-b-lg rounded-t-lg rounded-tl-lg shadow-shadowBox md:block'>
         <thead className='sticky top-2 z-20 rounded-t-lg bg-firstColor'>
@@ -27,21 +27,23 @@ export function TableDesktop ({ careerYear, subjects }) {
           </tr>
         </thead>
         <tbody className='text-black'>
-          {subjects.map((subject, index) => {
-            return (
-              <TableRow
-                key={subject.codigo}
-                codigo={subject.codigo}
-                nombre={subject.nombre}
-                dictado={subject.dictado}
-                correlativas={subject.correlativas}
-                index={index}
-                subjecstLength={subjects.length}
-              />
-            )
-          })}
+          <TableRows subjects={subjects} />
         </tbody>
       </table>
     </>
+  )
+}
+
+export function Tables ({ listOfSubjectsPerYear }) {
+  return (
+    listOfSubjectsPerYear
+      ? listOfSubjectsPerYear.map((subjectPerYear) =>
+        <ListOfTables
+          key={subjectPerYear.anio}
+          careerYear={subjectPerYear.anio}
+          subjects={subjectPerYear.materias}
+        />
+      )
+      : null
   )
 }

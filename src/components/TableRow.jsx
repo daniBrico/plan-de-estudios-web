@@ -1,7 +1,7 @@
 import { DropdownButton } from './DropdownButton'
 import { useState } from 'react'
 
-export function TableRow ({ codigo, nombre, dictado, correlativas, index, subjecstLength }) {
+function ListOfRows ({ codigo, nombre, dictado, correlativas, index, subjecstLength }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   const toggleDropdown = () => {
@@ -72,5 +72,23 @@ export function TableRow ({ codigo, nombre, dictado, correlativas, index, subjec
         </td>
       </tr>
     </>
+  )
+}
+
+export function TableRows ({ subjects }) {
+  return (
+    subjects.map((subject, index) => {
+      return (
+        <ListOfRows
+          key={subject.codigo}
+          codigo={subject.codigo}
+          nombre={subject.nombre}
+          dictado={subject.dictado}
+          correlativas={subject.correlativas}
+          index={index}
+          subjecstLength={subjects.length}
+        />
+      )
+    })
   )
 }
