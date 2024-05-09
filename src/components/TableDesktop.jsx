@@ -1,6 +1,6 @@
-import { TableRows } from './TableRow'
+import { TableRows } from './TableRowDesktop'
 
-function ListOfTables ({ tableTitle, subjects }) {
+function ListOfTablesDesktop ({ tableTitle, subjects }) {
   return (
     <>
       <h2 className='mb-2 mt-4 hidden text-center text-2xl text-firstColor md:block'>
@@ -34,11 +34,11 @@ function ListOfTables ({ tableTitle, subjects }) {
   )
 }
 
-export function Tables ({ listOfSubjectsPerYear }) {
+export function TablesDesktop ({ listOfSubjectsPerYear }) {
   return (
     listOfSubjectsPerYear
       ? listOfSubjectsPerYear.map((subjectPerYear) =>
-        <ListOfTables
+        <ListOfTablesDesktop
           key={subjectPerYear.anio}
           careerYear={subjectPerYear.anio}
           subjects={subjectPerYear.materias}

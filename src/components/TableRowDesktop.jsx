@@ -77,18 +77,16 @@ function ListOfRows ({ codigo, nombre, dictado, correlativas, index, subjecstLen
 
 export function TableRows ({ subjects }) {
   return (
-    subjects.map((subject, index) => {
-      return (
-        <ListOfRows
-          key={subject.codigo}
-          codigo={subject.codigo}
-          nombre={subject.nombre}
-          dictado={subject.dictado}
-          correlativas={subject.correlativas}
-          index={index}
-          subjecstLength={subjects.length}
-        />
-      )
-    })
+    subjects.map((subject, index) =>
+      <ListOfRows
+        key={subject.codigo}
+        codigo={subject.codigo}
+        nombre={subject.nombre}
+        dictado={subject.dictado}
+        correlativas={subject.correlativas}
+        index={index}
+        subjecstLength={subjects.length}
+      />
+    )
   )
 }

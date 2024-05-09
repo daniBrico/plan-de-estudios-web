@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import { CareerHeader } from './components/CareerHeader'
-import { Tables } from './components/Table'
+import { TablesMobile } from './components/TableMobile'
+import { TablesDesktop } from './components/TableDesktop'
 import { useFetch } from './hooks/useFetch'
 
 export function App () {
@@ -29,9 +30,14 @@ export function App () {
         <article className='m-auto max-w-4xl px-4 lg:flex lg:flex-col lg:items-center lg:px-0'>
           {
             careers !== null
-              ? <Tables listOfSubjectsPerYear={careers.listaDeMateriasPorAnio} />
+              ? <TablesDesktop listOfSubjectsPerYear={careers.listaDeMateriasPorAnio} />
               : null
           }
+          {/* {
+            careers !== null
+              ? <TablesMobile listOfSubjectsPerYear={careers.listaDeMateriasPorAnio} />
+              : null
+          } */}
         </article>
       </main>
     </>
