@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function DropdownButton ({ isOpen, toggleDropdown }) {
+export function DropdownButton({ isOpen, toggleDropdown }) {
   const [optionSelected, setOptionSelected] = useState('')
 
   const setOption = (option) => {
@@ -9,10 +9,11 @@ export function DropdownButton ({ isOpen, toggleDropdown }) {
   }
 
   return (
-    <div className='relative min-w-28' data-drop-menu='dropdown'>
+    <div className='relative w-28 sm:w-3/4 md:w-full' data-drop-menu='dropdown'>
       <div
         onClick={toggleDropdown}
-        className={`select glass hover:shadow-sha duration-600 group z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-firstColor px-2 text-white transition-shadow hover:border-white hover:bg-firstColor ${isOpen ? 'shadow-shadowSelect border-[#f15a5c]' : ''}`}
+        className={`select glass hover:shadow-sha duration-600 group z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-firstColor px-2 text-white transition-shadow hover:border-white hover:bg-firstColor 
+        ${isOpen ? 'border-[#f15a5c] shadow-shadowSelect' : ''}`}
       >
         <span
           className='selected text-firstColor group-hover:text-white'
@@ -25,7 +26,7 @@ export function DropdownButton ({ isOpen, toggleDropdown }) {
         />
       </div>
       <ul
-        className={`absolute left-1/2 top-9 z-30 flex w-full -translate-x-1/2 flex-col gap-0.5 rounded-md border border-solid border-white px-2 py-2 text-center text-firstColor shadow-shadowBox transition duration-300 ${isOpen ? 'opacity-1 visible' : 'opacity-0 invisible'} bg-thirdColor`}
+        className={`absolute left-1/2 top-9 z-30 flex w-full -translate-x-1/2 flex-col gap-0.5 rounded-md border border-solid border-white px-2 py-2 text-center text-firstColor shadow-shadowBox transition duration-300 ${isOpen ? 'opacity-1 visible' : 'invisible opacity-0'} bg-thirdColor`}
       >
         <li
           onClick={() => setOption('Aprobada')}
