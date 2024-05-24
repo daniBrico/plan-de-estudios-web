@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        onest: ['Onest Variable']
+        onest: ['Onest Variable', 'sans-serif']
       },
       colors: {
         firstColor: '#f15a5c',

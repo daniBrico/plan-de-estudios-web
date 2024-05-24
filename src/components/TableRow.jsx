@@ -67,7 +67,7 @@ function ListOfRows ({
         <td className='text-right text-sm md:p-2 md:text-center md:text-base'>
           {dictado}
         </td>
-        <td className='flex items-end justify-center text-center text-sm font-thin md:table-cell md:p-2 md:text-base md:font-normal'>
+        <td className='flex items-end justify-center text-center text-sm font-light md:table-cell md:p-2 md:text-base md:font-normal'>
           {correlativas.length !== 0 ? correlativas.join(' - ') : ''}
         </td>
         <td
