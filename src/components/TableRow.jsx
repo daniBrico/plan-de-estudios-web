@@ -1,13 +1,12 @@
 import { DropdownButton } from './DropdownButton'
 import { useState } from 'react'
 
-function ListOfRows({
+function ListOfRows ({
   codigo,
   nombre,
   dictado,
   correlativas,
-  index,
-  subjecstLength
+  index
 }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
@@ -39,7 +38,6 @@ function ListOfRows({
         <td
           className={`
               text-sm
-              font-medium
               transition
               md:p-2
               md:text-center
@@ -90,7 +88,7 @@ function ListOfRows({
   )
 }
 
-export function TableRows({ subjects }) {
+export function TableRows ({ subjects }) {
   return subjects.map((subject, index) => (
     <ListOfRows
       key={subject.codigo}

@@ -1,6 +1,6 @@
 import { TableRows } from './TableRow'
 
-function ListOfTables({ tableTitle, subjects }) {
+function ListOfTables ({ tableTitle, subjects }) {
   return (
     <>
       <h2 className='sticky top-2 z-20 mb-2 mt-4 rounded-tl-md rounded-tr-md bg-firstColor py-1 text-center text-xl text-white md:static md:rounded-none md:bg-white md:text-2xl md:text-firstColor'>
@@ -34,14 +34,14 @@ function ListOfTables({ tableTitle, subjects }) {
   )
 }
 
-export function Tables({ listOfSubjectsPerYear }) {
+export function Tables ({ listOfSubjectsPerYear }) {
   return listOfSubjectsPerYear
     ? listOfSubjectsPerYear.map((subjectPerYear) => (
-        <ListOfTables
-          key={subjectPerYear.anio}
-          tableTitle={subjectPerYear.anio}
-          subjects={subjectPerYear.materias}
-        />
-      ))
+      <ListOfTables
+        key={subjectPerYear.anio}
+        tableTitle={subjectPerYear.anio}
+        subjects={subjectPerYear.materias}
+      />
+    ))
     : null
 }

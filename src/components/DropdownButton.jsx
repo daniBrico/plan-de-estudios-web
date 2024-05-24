@@ -1,18 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export function DropdownButton({ isOpen, toggleDropdown }) {
+export function DropdownButton ({ isOpen, toggleDropdown }) {
   const [optionSelected, setOptionSelected] = useState('')
+  const dropdownRef = useRef(null)
 
   const setOption = (option) => {
     setOptionSelected(option)
     toggleDropdown()
   }
 
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) toggleDropdown()
+    }
+
+    if (isOpen) document.addEventListener('mousedown', handleOutsideClick)
+
+    return () => document.removeEventListener('mousedown', handleOutsideClick)
+  }, [isOpen])
+
   return (
-    <div className='relative w-28 sm:w-3/4 md:w-full' data-drop-menu='dropdown'>
+    <div ref={dropdownRef} className='relative w-28 sm:w-3/4 md:w-full' data-drop-menu='dropdown'>
       <div
         onClick={toggleDropdown}
-        className={`select glass hover:shadow-sha duration-600 group z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-firstColor px-2 text-white transition-shadow hover:border-white hover:bg-firstColor 
+        className={`select hover:shadow-sha duration-600 group z-10 flex min-h-8 cursor-pointer items-center justify-between rounded border-2 border-solid border-firstColor px-2 text-white transition-shadow hover:border-white hover:bg-firstColor 
         ${isOpen ? 'border-[#f15a5c] shadow-shadowSelect' : ''}`}
       >
         <span
