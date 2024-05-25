@@ -1,8 +1,7 @@
-# React + Vite
+# Plan de estudios web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una página web que permite ver el plan de estudios de la universidad e interactuar con él cambiando el estado de sus materias según el alumno las vaya aprobando. 
 
-Currently, two official plugins are available:
+El proyecto aún no está terminado. Esta en proceso.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Las tecnologías con las que está siendo realizado este proyecto son ReactJS, utilizando Node.js para el control de las rutas de la API de donde se obtiene la información de los planes de estudio.
