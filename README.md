@@ -5,3 +5,5 @@ Esta es una página web que permite ver el plan de estudios de la universidad e 
 El proyecto aún no está terminado. Esta en proceso.
 
 Las tecnologías con las que está siendo realizado este proyecto son ReactJS, utilizando Node.js para el control de las rutas de la API de donde se obtiene la información de los planes de estudio.
+
+Además de ello se esta utilizando tailwind para los estilos CSS.
